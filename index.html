@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
- 
+
   <!-- Decorative leaves -->
   <div class="leaf leaf-1">🌿</div>
   <div class="leaf leaf-2">🍃</div>
   <div class="leaf leaf-3">🌱</div>
- 
+
   <!-- Header -->
   <header>
     <div class="logo">
@@ -23,26 +23,20 @@
     </div>
     <span class="badge">Diagnóstico IA</span>
   </header>
- 
+
   <!-- Hero -->
   <section class="hero">
     <p class="hero-label">Análisis fitosanitario</p>
     <h1>¿Tu planta está<br /><em>bien o tiene algo?</em></h1>
     <p>Sube una foto o pega un enlace y la IA analizará el estado de salud de tu planta en segundos.</p>
   </section>
- 
+
   <!-- Main card -->
   <div class="main-card">
     <div class="card">
- 
+
       <!-- Input panel -->
       <div id="inputPanel">
-        <!-- Tabs -->
-        <div class="tabs">
-          <button class="tab active" onclick="switchTab('upload')">📸 Subir foto</button>
-          <button class="tab" onclick="switchTab('url')">🔗 Link de imagen</button>
-        </div>
- 
         <!-- Upload panel -->
         <div class="upload-area" id="uploadPanel">
           <div class="dropzone" id="dropzone">
@@ -56,18 +50,10 @@
             <button class="preview-clear" onclick="clearFile()">✕</button>
           </div>
         </div>
- 
-        <!-- URL panel -->
-        <div class="url-panel" id="urlPanel">
-          <span class="url-label">URL de la imagen</span>
-          <div class="url-input-wrap">
-            <input class="url-input" type="url" id="urlInput" placeholder="https://ejemplo.com/planta.jpg" />
-          </div>
-        </div>
- 
+
         <!-- Error -->
         <div class="error-box" id="errorBox"></div>
- 
+
         <!-- Button -->
         <div class="analyze-wrap">
           <button class="btn-analyze" id="btnAnalyze" onclick="analyze()">
@@ -75,14 +61,14 @@
           </button>
         </div>
       </div>
- 
+
       <!-- Loading -->
       <div class="loading-card" id="loadingCard">
         <div class="spinner"></div>
         <div class="loading-title">Examinando tu planta…</div>
         <div class="loading-sub">Esto puede tardar unos segundos</div>
       </div>
- 
+
       <!-- Results -->
       <div class="results-card" id="resultsCard">
         <div class="results-header">
@@ -93,12 +79,12 @@
         <div class="diagnosis-list" id="diagnosisList"></div>
         <div class="verdict" id="verdict"></div>
       </div>
- 
+
     </div>
   </div>
- 
+
   <footer>PlantSanity · Diagnóstico asistido por IA · Solo orientativo, no reemplaza consulta profesional</footer>
- 
+
   <script src="app.js"></script>
 </body>
 </html>
