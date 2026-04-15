@@ -1,11 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlantSanity</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlantSanity — Diagnóstico de Plantas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    Tu vieja
+ 
+  <!-- Decorative leaves -->
+  <div class="leaf leaf-1">🌿</div>
+  <div class="leaf leaf-2">🍃</div>
+  <div class="leaf leaf-3">🌱</div>
+ 
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🌿</span>
+      <span class="logo-text">Plant<span>Sanity</span></span>
+    </div>
+    <span class="badge">Diagnóstico IA</span>
+  </header>
+ 
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-label">Análisis fitosanitario</p>
+    <h1>¿Tu planta está<br /><em>bien o tiene algo?</em></h1>
+    <p>Sube una foto o pega un enlace y la IA analizará el estado de salud de tu planta en segundos.</p>
+  </section>
+ 
+  <!-- Main card -->
+  <div class="main-card">
+    <div class="card">
+ 
+      <!-- Input panel -->
+      <div id="inputPanel">
+        <!-- Tabs -->
+        <div class="tabs">
+          <button class="tab active" onclick="switchTab('upload')">📸 Subir foto</button>
+          <button class="tab" onclick="switchTab('url')">🔗 Link de imagen</button>
+        </div>
+ 
+        <!-- Upload panel -->
+        <div class="upload-area" id="uploadPanel">
+          <div class="dropzone" id="dropzone">
+            <input type="file" accept="image/*" id="fileInput" onchange="handleFile(this.files[0])" />
+            <span class="dropzone-icon">🌱</span>
+            <div class="dropzone-title">Arrastra tu foto aquí</div>
+            <div class="dropzone-sub">o haz clic para seleccionar · JPG, PNG, WEBP</div>
+          </div>
+          <div class="preview-wrap" id="previewWrap">
+            <img id="previewImg" src="" alt="Previsualización" />
+            <button class="preview-clear" onclick="clearFile()">✕</button>
+          </div>
+        </div>
+ 
+        <!-- URL panel -->
+        <div class="url-panel" id="urlPanel">
+          <span class="url-label">URL de la imagen</span>
+          <div class="url-input-wrap">
+            <input class="url-input" type="url" id="urlInput" placeholder="https://ejemplo.com/planta.jpg" />
+          </div>
+        </div>
+ 
+        <!-- Error -->
+        <div class="error-box" id="errorBox"></div>
+ 
+        <!-- Button -->
+        <div class="analyze-wrap">
+          <button class="btn-analyze" id="btnAnalyze" onclick="analyze()">
+            <span>🔬</span> Analizar planta
+          </button>
+        </div>
+      </div>
+ 
+      <!-- Loading -->
+      <div class="loading-card" id="loadingCard">
+        <div class="spinner"></div>
+        <div class="loading-title">Examinando tu planta…</div>
+        <div class="loading-sub">Esto puede tardar unos segundos</div>
+      </div>
+ 
+      <!-- Results -->
+      <div class="results-card" id="resultsCard">
+        <div class="results-header">
+          <span class="results-title">Diagnóstico</span>
+          <button class="btn-reset" onclick="reset()">← Nueva consulta</button>
+        </div>
+        <img class="result-thumb" id="resultThumb" src="" alt="" />
+        <div class="diagnosis-list" id="diagnosisList"></div>
+        <div class="verdict" id="verdict"></div>
+      </div>
+ 
+    </div>
+  </div>
+ 
+  <footer>PlantSanity · Diagnóstico asistido por IA · Solo orientativo, no reemplaza consulta profesional</footer>
+ 
+  <script src="app.js"></script>
 </body>
 </html>
