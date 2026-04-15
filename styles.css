@@ -152,46 +152,7 @@ header {
   box-shadow: 0 4px 40px rgba(45,74,34,0.08), 0 1px 0 rgba(255,255,255,0.9) inset;
 }
 
-/* ── Tabs ── */
-.tabs {
-  display: flex;
-  border-bottom: 1px solid rgba(45,74,34,0.1);
-}
-
-.tab {
-  flex: 1;
-  padding: 1.1rem;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s;
-  position: relative;
-}
-
-.tab.active { color: var(--green-deep); }
-
-.tab.active::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 20%;
-  right: 20%;
-  height: 2px;
-  background: var(--green-mid);
-  border-radius: 2px;
-}
-
-.tab:hover:not(.active) {
-  color: var(--green-mid);
-  background: rgba(74,124,53,0.04);
-}
-
-/* ── Upload area ── */
+/* ── Analyze button ── */
 .upload-area {
   padding: 2.5rem;
 }
@@ -277,44 +238,6 @@ header {
   justify-content: center;
   backdrop-filter: blur(4px);
 }
-
-/* ── URL panel ── */
-.url-panel {
-  padding: 2.5rem;
-  display: none;
-}
-
-.url-panel.show { display: block; }
-
-.url-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.75rem;
-  display: block;
-}
-
-.url-input-wrap {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.url-input {
-  flex: 1;
-  background: rgba(255,255,255,0.8);
-  border: 1px solid rgba(45,74,34,0.2);
-  border-radius: 0.6rem;
-  padding: 0.75rem 1rem;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--ink);
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.url-input:focus { border-color: var(--green-mid); }
-.url-input::placeholder { color: var(--muted); }
 
 /* ── Analyze button ── */
 .analyze-wrap {
