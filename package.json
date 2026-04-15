@@ -1,0 +1,27 @@
+{
+  "name": "iaitla-plantsanity",
+  "version": "1.0.0",
+  "description": "Una pequeña pagina web, que consume una API creada en conjunto para la materia de IA, especializada en diagnosticar plantas, dependiendo sus condiciones.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crhistian-bytebrisa/IAITLA-PlantSanity.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/crhistian-bytebrisa/IAITLA-PlantSanity/issues"
+  },
+  "homepage": "https://github.com/crhistian-bytebrisa/IAITLA-PlantSanity#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2"
+  }
+}

@@ -127,24 +127,15 @@ async function analyze() {
   showPanel('loadingCard');
 
   try {
-    //Convertir base64 a blob
-    const byteCharacters = atob(currentImageBase64);
-    const byteNumbers = new Array(byteCharacters.length)
-      .fill(0)
-      .map((_, i) => byteCharacters.charCodeAt(i));
-
-    const byteArray = new Uint8Array(byteNumbers);
-    const file = new Blob([byteArray], { type: 'image/jpeg' });
-
-
-    //Hacer la peticion a la API (intentamos ponerlo con .env pero igualmente se podia ver la Prediction-Key desde el Frontend mediante la Consola)
-    const response = await fetch("https://cvplantsdemo-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/0f3e876a-4bee-4ccb-9eec-e38c96edfb55/classify/iterations/plant-disease-model/image", {
+    //Hacer la peticion a la API (la API intermedia que tenemos no la de Azure)
+    const response = await fetch("/analyze", {
       method: 'POST',
       headers: {
-        "Prediction-Key": "Fcue1P5CNlqOqtAx4m0H3Qt7iXk0TLIXI3K6bBxi5KPP552Bu7cCJQQJ99CDACYeBjFXJ3w3AAAIACOGapbJ",
-        "Content-Type": "application/octet-stream"
+        "Content-Type": "application/json"
       },
-      body: file
+      body: JSON.stringify({
+        imageBase64: currentImageBase64
+      })
     });
 
     //Retornar error
